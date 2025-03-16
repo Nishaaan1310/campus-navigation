@@ -1,0 +1,528 @@
+/* General Styles */
+.map-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  color: #721c24;
+  background-color: #f8d7da;
+  padding: 20px;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Make sure the map container takes full height */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.info-window {
+  padding: 10px;
+  min-width: 150px;
+}
+
+.info-window h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.info-window p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Custom map controls styling */
+.gm-style-mtc button,
+.gm-svpc button,
+.gm-fullscreen-control button {
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .map-container {
+    height: calc(100vh - 60px); /* Adjust if you have a header */
+  }
+  
+  .info-window {
+    min-width: 120px;
+  }
+}
+
+/* General Styles */
+.map-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Increased max-width for larger map */
+  margin: 20px auto; /* Added margin for better spacing */
+  position: relative;
+  flex: 1;
+  position: relative;
+  background: url('https://i.imgur.com/HW2Cdz9.jpg') no-repeat center center; /* Default map background */
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Add overlay to make the map slightly dimmed */
+.map-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.map-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.map-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.map-image-container {
+  position: relative;
+  width: 100%;
+  height: 600px; /* Increased height for larger map */
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0; /* Light background for contrast */
+}
+
+.campus-image {
+  width: 100%;
+  height: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Ensure the image scales properly */
+  border-radius: 15px;
+  transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+/* Marker Styles */
+.marker {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+.start-marker {
+  background-color: #007bff; /* Blue for start location */
+}
+
+.end-marker {
+  background-color: #28a745; /* Green for end location */
+}
+
+.marker span {
+  display: block;
+  text-align: center;
+}
+
+/* Zoom Controls */
+.zoom-controls {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.zoom-button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.zoom-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .map-container {
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .map-title {
+    font-size: 24px;
+  }
+
+  .map-description {
+    font-size: 16px;
+  }
+
+  .map-image-container {
+    height: 400px; /* Adjusted height for smaller screens */
+  }
+
+  .zoom-controls {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .zoom-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Required for the map to display properly */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-spinner {
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.map-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eef2f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+.map-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #2d3748;
+}
+
+.map-title i {
+  font-size: 1.5rem;
+  color: #6B73FF;
+}
+
+.map-title h3 {
+  color: #2d3748;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.map-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.map-control-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background: #f8f9fa;
+  color: #4a5568;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.map-control-btn:hover {
+  background: #6B73FF;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.map-control-btn:active {
+  transform: translateY(0);
+}
+
+.map-control-btn.view-larger {
+  width: auto;
+  padding: 0 15px;
+}
+
+.map-control-btn.active {
+  background: #6B73FF;
+  color: white;
+}
+
+/* Tooltip styles */
+.map-control-btn {
+  position: relative;
+}
+
+.map-control-btn:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Zoom level indicator */
+.zoom-level {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 14px;
+  z-index: 1000;
+}
+
+/* Map type indicator */
+.map-type {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 14px;
+  z-index: 1000;
+}
+
+/* Loading state */
+.map-display.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .map-wrapper {
+    height: 500px;
+    margin-top: 1rem;
+  }
+
+  .map-header {
+    padding: 1rem;
+  }
+
+  .map-title h3 {
+    font-size: 1.1rem;
+  }
+
+  .map-control-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .map-control-btn.view-larger {
+    display: none;
+  }
+
+  .map-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    justify-content: center;
+  }
+
+  .map-display {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-wrapper {
+    height: 400px;
+  }
+
+  .map-controls {
+    display: none;
+  }
+
+  .stat-item {
+    font-size: 0.9rem;
+  }
+
+  .map-display {
+    min-height: 300px;
+  }
+  
+  .map-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.route-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-left: 15px;
+  background: #f0f2ff;
+  padding: 4px 12px;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.map-display {
+  position: relative;
+  height: calc(100% - 60px); /* Adjust based on your header height */
+  min-height: 400px;
+}
+
+/* Add loading indicator */
+.map-display::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.map-display.loading::before {
+  opacity: 1;
+}
+
+/* Custom popup styles */
+.leaflet-popup-
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Required Leaflet styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.leaflet-control-container .leaflet-control {
+  margin: 10px;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 5px;
+  border-radius: 4px;
+}

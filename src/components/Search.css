@@ -1,0 +1,308 @@
+/* General Styles */
+.search-form {
+  width: 300px; /* Fixed width for the sidebar */
+  height: calc(100vh - 60px); /* Adjust height to account for navbar */
+  padding: 20px;
+  background: #fff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixed position to keep it in place */
+  top: 60px; /* Position below the navbar */
+  left: 0; /* Position on the left side */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.search-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.search-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.search-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.search-wrapper {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.search-field {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.start-icon {
+  color: #4CAF50;
+}
+
+.end-icon {
+  color: #f44336;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 40px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+}
+
+.search-input:focus {
+  border-color: #6B73FF;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(107, 115, 255, 0.1);
+  outline: none;
+}
+
+.clear-button {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.clear-button:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.location-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.5rem 12px;
+  margin: 0.5rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 2px;
+  background: #e0e0e0;
+}
+
+.swap-button {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+}
+
+.swap-button:hover {
+  background: #6B73FF;
+  border-color: #6B73FF;
+  color: white;
+  transform: rotate(180deg);
+}
+
+.search-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.search-button,
+.clear-all-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.search-button {
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  color: white;
+  flex: 2;
+}
+
+.clear-all-button {
+  background: #f8f9fa;
+  color: #666;
+  border: 2px solid #e0e0e0;
+  flex: 1;
+}
+
+.search-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(107, 115, 255, 0.2);
+}
+
+.clear-all-button:hover:not(:disabled) {
+  background: #ff4d4d;
+  color: white;
+  border-color: #ff4d4d;
+}
+
+.search-button:disabled,
+.clear-all-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-input {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .search-wrapper {
+    padding: 1rem;
+  }
+
+  .search-actions {
+    flex-direction: column;
+  }
+
+  .search-button,
+  .clear-all-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-input {
+    font-size: 0.9rem;
+    padding: 10px 35px;
+  }
+}
+
+/* Optional: Add focus styles for buttons */
+.search-button:focus,
+.clear-all-button:focus,
+.swap-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(107, 115, 255, 0.3);
+}
+
+/* Optional: Add loading state styles */
+.search-button.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.search-button.loading i {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Optional: If you want to specifically target just the first search field */
+.search-field:first-child {
+  margin-top: 0.5rem;
+}

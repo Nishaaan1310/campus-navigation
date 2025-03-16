@@ -1,38 +1,130 @@
+/* General Styles */
 .App {
+  font-family: 'Arial', sans-serif;
   text-align: center;
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #0000;
+  /* box-shadow: 0 4px 8px rgba(243, 240, 240, 0.836); */
+  border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Map Container */
+.map-container {
+    background-color: white;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Route Display */
+.route-display {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.route-display h2 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.route-display ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.route-display li {
+    color: #666;
+    padding: 8px 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.route-display li:last-child {
+    border-bottom: none;
+}
+
+/*Login Component*/
+.login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(4, 0, 8, 0.1); */
+  width: 300px;
+  margin: 20px auto;
+}
+
+.login-form label {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+.login-form input {
+  padding: 8px;
+  margin-top: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.login-form button:hover {
+  background-color: #0056b3;
+}
+/* General Styles */
+/* General Styles */
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .main-content {
+    margin-top: 10px;
   }
 }
